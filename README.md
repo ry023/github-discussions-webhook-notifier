@@ -24,10 +24,9 @@ jobs:
   notify-github-discussions:
     runs-on: ubuntu-latest
     steps:
-      - uses: ostk0069/github-discussions-notifier@v0.0.2
+      - uses: ry023/github-discussions-webhook-notifier@main
         with:
-          SLACK_CHANNEL_ID: <your slack channel id>
-          SLACK_BOT_TOKEN: <your slack bot token>
+          SLACK_INCOMMING_WEBHOOK_URL: <your slack incomming webhook url>
 ```
 
 ### Optional
@@ -45,10 +44,9 @@ jobs:
   notify-github-discussions:
     runs-on: ubuntu-latest
     steps:
-      - uses: ostk0069/github-discussions-notifier@v0.0.2
+      - uses: ry023/github-discussions-webhook-notifier@main
         with:
-          SLACK_CHANNEL_ID: <your slack channel id>
-          SLACK_BOT_TOKEN: <your slack bot token>
+          SLACK_INCOMMING_WEBHOOK_URL: <your slack incomming webhook url>
           send-discussion-create: true
           send-discussion-comment: false
 ```
@@ -59,8 +57,7 @@ See [action.yml](action.yml)
 
 | Name | Description | Default | Required |
 | - | - | - | - |
-| `SLACK_CHANNEL_ID` | your slack channel id | - | yes |
-| `SLACK_BOT_TOKEN` | your slack bot token | - | yes |
+| `SLACK_INCOMMING_WEBHOOK_URL` | your slack incomming webhook url | - | yes |
 | `send-discussion-create` | send discussion create notification? | true | no |
 | `send-discussion-comment` | send discussion comment notification? | true | no |
 | `unfurl-links` | Pass true to enable unfurling of primarily text-based content | false | no |
